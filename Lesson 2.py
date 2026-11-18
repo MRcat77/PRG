@@ -15,17 +15,24 @@ Topics:
 ====================================================
 INPUT AND STRING MANIPULATION
 ====================================================
+#Store users name in a variable. The order matters, first method (strip()) runs before the next (capitalize())
+name = input("Enter your name: ").strip().capitalize()  
+print("Hi "+name)
 """
-#Store users name in a variable
-name = input("Enter your name: ").strip()
 
 #Stores the users games as a string
 games = input("Enter your favourite games (separated by comma): ")
+print(games)
 
+#Removes whitespaces in string
+#games = games.replace(" ", "")  #Remove all spaces from the string
 #Create the list of games entered by the user
+
 game_list = games.split(",")
 
-#Prepare the list
+print (game_list)
+
+#Prepare the list, this just creates an empty list we can use to store processed (.strip().title()) strings.
 clean_games = []
 
 #Clean the games and remove blank entries
@@ -45,6 +52,21 @@ for game in clean_games:
     print(game)
 
 
+
+#FOR LOOP (With counter)
+print("\nCounter Example")
+#Print the same list of games, but adding an incrementing counter for each element.
+#Initialize a counter variable to 1, count starts at 1
+counter = 1
+#For every game in the list of cleaned games, print the game with a number in front of it, and increase the counter by 1
+for game in clean_games:
+
+    #Using an "f-string" to include variables into printed text. (optionally: print(counter,"- ",game))
+    print(f"{counter}- {game}")
+    #Increasae the counter for each loop (iteration), so the next printed item will be 1 higher
+    counter += 1
+    
+"""
 
 #IF / ELIF / ELSE
 
@@ -77,28 +99,7 @@ print("*" * 40)
 
 
 
-#FOR-EACH LOOP
 
-print("\nPrint each game in the list using a for-each loop:")
-
-#For every game in the list of cleaned games, print the game
-for game in clean_games:
-    print(game)
-
-
-#FOR LOOP (With counter)
-
-print("\nCounter Example")
-
-#Initialize a counter variable to 1, count starts at 1
-counter = 1
-
-#For every game in the list of cleaned games, print the game with a number in front of it, and increase the counter by 1
-for game in clean_games:
-
-    print(f"{counter}. {game}")
-
-    counter += 1
 
 
 
@@ -153,7 +154,7 @@ print_border()
 
 
 
-
+"""
 
 #==== When creating functions, be aware of existing function names ====
 
